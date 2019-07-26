@@ -146,6 +146,8 @@ a {
   /* Restrict the maximum width of the .main-block to 1200px,
   then ensure that block is centered within the layout */
   /* Hint: how do you center a block element? */
+  max-width: 1200 px;
+  align-self: center;
 }
 
 .main-section {
@@ -179,7 +181,7 @@ a {
   background-color: #fff;
   border: 1px solid #ddd;
   padding: 0 1em;
-  margin: 1em 0;
+  /* margin: 1em 0; */
 }
 
 .article-img {
@@ -217,10 +219,13 @@ a {
     /* Use this as a reminder of the syntax:
       https://codepen.io/roccop/pen/WLQJXY?editors=1100
     */
+    grid-template-columns: 1fr 1fr;
     /* TODO 5 */
     /* set a grid-gap of 1em 
     and make sure to remove the margin on each .lesson
     to get an evenly spaced layout. */
+    grid-gap: 1em;
+    
   }
 
 }
@@ -247,6 +252,8 @@ a {
   .lessons-grid {
     /* TODO 2 */
     /* 4 column template! (1 fraction each) */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   /* TODO 4 */
@@ -260,7 +267,19 @@ a {
   --------------------------- */
   /* Hint: Don't think about shrinking the last two elements into the single column,
   but instead think about stretching the first two across the template. */
+  .main-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr
+  }
 
+  .main-header {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+  }
 
+  .lessons {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+  }
 
 }
